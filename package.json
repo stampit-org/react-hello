@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "lodash": "^3.9.3",
-    "react": "^0.13.3",
+    "prop-types": "^0.1.0",
     "react-stampit": "^0.5.1"
   }
 }

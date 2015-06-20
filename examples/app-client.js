@@ -1,8 +1,8 @@
-import React from 'react';
+/* global React */
 
-/*eslint-disable no-unused-vars*/
-import Hello from '../source/hello';
-/*eslint-enable no-unused-vars*/
+import helloFactory from '../source/hello';
+
+const Hello = helloFactory(React);
 
 let word = 'world';
 let mode = 'display';
@@ -20,7 +20,7 @@ const actions = {
   },
 };
 
-render = function () {
+render = () => {
   React.render(
     <Hello
       actions = { actions }
