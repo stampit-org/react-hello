@@ -5,7 +5,7 @@ let app = express();
 
 const staticPath = path.resolve('build/');
 
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
     <html>

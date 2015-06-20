@@ -1,14 +1,14 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import stampit from 'react-stampit';
 
 const {
   string,
   func
-} = React.PropTypes;
+} = PropTypes;
 
-export default stampit(React, {
+export default React => stampit(React, {
   propTypes: {
-    actions: React.PropTypes.shape({
+    actions: PropTypes.shape({
       setWord: func.isRequired,
       setMode: func.isRequired,
     }),

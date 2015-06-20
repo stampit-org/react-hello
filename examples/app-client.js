@@ -1,8 +1,10 @@
 import React from 'react';
 
 /*eslint-disable no-unused-vars*/
-import Hello from '../source/hello';
+import helloFactory from '../source/hello';
 /*eslint-enable no-unused-vars*/
+
+const Hello = helloFactory(React);
 
 let word = 'world';
 let mode = 'display';
@@ -20,7 +22,7 @@ const actions = {
   },
 };
 
-render = function () {
+render = () => {
   React.render(
     <Hello
       actions = { actions }
