@@ -1,8 +1,6 @@
-import React from 'react';
+/* global React */
 
-/*eslint-disable no-unused-vars*/
 import helloFactory from '../source/hello';
-/*eslint-enable no-unused-vars*/
 
 const Hello = helloFactory(React);
 
