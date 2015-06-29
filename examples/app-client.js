@@ -17,7 +17,7 @@ const actions = {
   setMode (m) {
     mode = m;
     render();
-  },
+  }
 };
 
 render = () => {
