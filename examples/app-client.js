@@ -1,8 +1,12 @@
 /* global React */
 
+import Cerebral from 'cerebral';
+
+import cortexFactory from '../source/cortex';
 import helloFactory from '../source/hello';
 
 const Hello = helloFactory(React);
+const cortex = cortexFactory({ Cerebral });
 
 let word = 'world';
 let mode = 'display';
