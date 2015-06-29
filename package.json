@@ -7,6 +7,7 @@
     "clean": "rm -rf build && mkdir build",
     "lint": "eslint source && eslint examples",
     "build": "npm run clean && browserify -s appClient examples/app-client.js -t babelify > build/app-client.js",
+    "watchify": "watchify -s appClient examples/app-client.js -t babelify -o build/app-client.js",
     "test": "echo 'No tests defined!'",
     "check": "npm run lint && npm run build && npm test",
     "start": "npm run check && babel-node examples/server.js",
@@ -33,7 +34,8 @@
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.5.2",
     "express": "^4.12.4",
-    "pre-commit": "^1.0.7"
+    "pre-commit": "^1.0.7",
+    "watchify": "^3.2.3"
   },
   "dependencies": {
     "lodash": "^3.9.3",
