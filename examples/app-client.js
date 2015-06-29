@@ -8,31 +8,22 @@ import helloFactory from '../source/hello';
 const Hello = helloFactory(React);
 const cortex = cortexFactory({ Cerebral });
 
-let word = 'world';
-let mode = 'display';
-let render;
-
 const actions = {
   setWord (w) {
-    word = w;
-    render();
+
   },
 
   setMode (m) {
-    mode = m;
-    render();
+
   }
 };
 
-render = () => {
-  React.render(
-    <Hello
-      actions = { actions }
-      mode={ mode }
-      word={ word }
-    />,
-    document.getElementById('content')
-  );
-};
+cortex.signal('setWord', actions.setWord);
+cortex.signal('setMode', actions.setMode);
 
-render();
+let Wrapper = cortex.injectInto(Hello);
+
+React.render(
+  <Wrapper />,
+  document.getElementById('content')
+);

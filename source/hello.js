@@ -1,5 +1,9 @@
+'use strict';
+
 import PropTypes from 'prop-types';
 import stampit from 'react-stampit';
+
+import cerebralMixin from 'cerebral/mixin';
 
 const {
   string,
@@ -16,6 +20,10 @@ export default React => stampit(React, {
     word: string
   },
 
+  getCerebralState () {
+    return ['word', 'mode'];
+  },
+
   componentDidUpdate () {
     this.refs.wordInput.getDOMNode().focus();
   },
@@ -24,12 +32,12 @@ export default React => stampit(React, {
     const {
       word,
       mode
-    } = this.props;
+    } = this.state;
 
     const {
       setMode,
       setWord
-    } = this.props.actions;
+    } = this.signals;
 
     const styles = {
       displayMode: {
@@ -67,4 +75,4 @@ export default React => stampit(React, {
       </p>
     );
   }
-});
+}).compose(cerebralMixin);

@@ -7,7 +7,7 @@
     "clean": "rm -rf build && mkdir build",
     "lint": "eslint source && eslint examples",
     "build": "npm run clean && browserify -s appClient examples/app-client.js -t babelify > build/app-client.js",
-    "watchify": "watchify -s appClient examples/app-client.js -t babelify -o build/app-client.js",
+    "watchify": "watchify -s appClient examples/app-client.js -t babelify -o build/app-client.js -v",
     "test": "echo 'No tests defined!'",
     "check": "npm run lint && npm run build && npm test",
     "start": "npm run check && babel-node examples/server.js",
