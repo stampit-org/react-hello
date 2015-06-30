@@ -14,10 +14,10 @@ export default React => stampit(React, {
   propTypes: {
     actions: PropTypes.shape({
       setWord: func.isRequired,
-      setMode: func.isRequired
+      setMode: func.isRequired,
     }),
     mode: string,
-    word: string
+    word: string,
   },
 
   getCerebralState () {
@@ -41,12 +41,12 @@ export default React => stampit(React, {
 
     const styles = {
       displayMode: {
-        display: (mode === 'display') ? 'inline' : 'none'
+        display: (mode === 'display') ? 'inline' : 'none',
       },
 
       editMode: {
-        display: (mode === 'edit') ? 'inline' : 'none'
-      }
+        display: (mode === 'edit') ? 'inline' : 'none',
+      },
     };
 
     const onKeyUp = function (e) {
@@ -74,5 +74,5 @@ export default React => stampit(React, {
         />
       </p>
     );
-  }
+  },
 }).compose(cerebralMixin);

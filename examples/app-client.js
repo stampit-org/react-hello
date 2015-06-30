@@ -15,7 +15,7 @@ const actions = {
 
   setMode (m) {
 
-  }
+  },
 };
 
 cortex.signal('setWord', actions.setWord);
